@@ -1,0 +1,694 @@
+[
+  {
+    "name": "zero-seq",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 0,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "unsafe-seq",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 9007199254740992,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "fractional-seq",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1.5,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "empty-source",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "missing-label",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "unknown-phase",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "approved",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "negative-count",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": -1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "wrong-result",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": {
+            "id": "r1",
+            "outcome": "success"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "missing-nullable-turn",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "hook namespace cannot own snapshot connection",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "hook:codex",
+      "sourceLabel": "fake",
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-invalid-version-2",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [],
+      "v": 2
+    }
+  },
+  {
+    "name": "snapshot-invalid-version-null",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [],
+      "v": null
+    }
+  },
+  {
+    "name": "snapshot-invalid-version-\"1\"",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [],
+      "v": "1"
+    }
+  },
+  {
+    "name": "snapshot-invalid-version-true",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [],
+      "v": true
+    }
+  },
+  {
+    "name": "snapshot-invalid-version-1.5",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [],
+      "v": 1.5
+    }
+  },
+  {
+    "name": "snapshot-missing-type",
+    "message": {
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-wrong-type-type",
+    "message": {
+      "type": false,
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-missing-sourceId",
+    "message": {
+      "type": "snapshot",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-wrong-type-sourceId",
+    "message": {
+      "type": "snapshot",
+      "sourceId": false,
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-missing-sourceLabel",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-wrong-type-sourceLabel",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": false,
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-missing-seq",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-wrong-type-seq",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": false,
+      "sessions": []
+    }
+  },
+  {
+    "name": "snapshot-missing-sessions",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1
+    }
+  },
+  {
+    "name": "snapshot-wrong-type-sessions",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": false
+    }
+  },
+  {
+    "name": "heartbeat-invalid-version-2",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20,
+      "v": 2
+    }
+  },
+  {
+    "name": "heartbeat-invalid-version-null",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20,
+      "v": null
+    }
+  },
+  {
+    "name": "heartbeat-invalid-version-\"1\"",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20,
+      "v": "1"
+    }
+  },
+  {
+    "name": "heartbeat-invalid-version-true",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20,
+      "v": true
+    }
+  },
+  {
+    "name": "heartbeat-invalid-version-1.5",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20,
+      "v": 1.5
+    }
+  },
+  {
+    "name": "heartbeat-missing-type",
+    "message": {
+      "sourceId": "source-a",
+      "seq": 20
+    }
+  },
+  {
+    "name": "heartbeat-wrong-type-type",
+    "message": {
+      "type": false,
+      "sourceId": "source-a",
+      "seq": 20
+    }
+  },
+  {
+    "name": "heartbeat-missing-sourceId",
+    "message": {
+      "type": "heartbeat",
+      "seq": 20
+    }
+  },
+  {
+    "name": "heartbeat-wrong-type-sourceId",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": false,
+      "seq": 20
+    }
+  },
+  {
+    "name": "heartbeat-missing-seq",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a"
+    }
+  },
+  {
+    "name": "heartbeat-wrong-type-seq",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": false
+    }
+  },
+  {
+    "name": "activity-invalid-version-2",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "v": 2
+    }
+  },
+  {
+    "name": "activity-invalid-version-null",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "v": null
+    }
+  },
+  {
+    "name": "activity-invalid-version-\"1\"",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "v": "1"
+    }
+  },
+  {
+    "name": "activity-invalid-version-true",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "v": true
+    }
+  },
+  {
+    "name": "activity-invalid-version-1.5",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "v": 1.5
+    }
+  },
+  {
+    "name": "activity-missing-type",
+    "message": {
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-wrong-type-type",
+    "message": {
+      "type": false,
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-missing-provider",
+    "message": {
+      "type": "activity",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-wrong-type-provider",
+    "message": {
+      "type": "activity",
+      "provider": false,
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-missing-sessionId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-wrong-type-sessionId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": false,
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-missing-turnId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-wrong-type-turnId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": false,
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-missing-eventId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-wrong-type-eventId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": false,
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-missing-kind",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-wrong-type-kind",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": false,
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-missing-occurredAt",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-wrong-type-occurredAt",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": false,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-missing-toolId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800
+    }
+  },
+  {
+    "name": "activity-wrong-type-toolId",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": false
+    }
+  }
+]

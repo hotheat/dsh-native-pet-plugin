@@ -1,0 +1,56 @@
+[
+  {
+    "name": "codex starts a turn",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "claude ends a session",
+    "message": {
+      "type": "activity",
+      "provider": "claudeCode",
+      "sessionId": "hook-session",
+      "turnId": null,
+      "eventId": "event-a",
+      "kind": "sessionEnded",
+      "occurredAt": 1792756800,
+      "toolId": null
+    }
+  },
+  {
+    "name": "activity-explicit-v1",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "v": 1
+    }
+  },
+  {
+    "name": "unknown-activity-field",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "optional": "ignored"
+    }
+  }
+]

@@ -1,0 +1,274 @@
+[
+  {
+    "name": "empty-baseline",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": []
+    }
+  },
+  {
+    "name": "idle",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": null,
+          "phase": "idle",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "running",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 3,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": null,
+          "phase": "running",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "thinking",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 4,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "thinking",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "working",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 5,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "waiting",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 6,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "completed",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 7,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "completed",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "result": {
+            "id": "session-a:1:completed",
+            "outcome": "completed"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "error",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 8,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "error",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "result": {
+            "id": "session-a:1:error",
+            "outcome": "error"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "stopped",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 9,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "stopped",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "result": {
+            "id": "session-a:1:stopped",
+            "outcome": "aborted"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "heartbeat",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20
+    }
+  },
+  {
+    "name": "unknown-top-level-field",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null
+        }
+      ],
+      "secret": "not-accepted"
+    }
+  },
+  {
+    "name": "unknown-session-field",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "result": null,
+          "prompt": "private"
+        }
+      ]
+    }
+  },
+  {
+    "name": "unknown-result-field",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 7,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "completed",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "result": {
+            "id": "session-a:1:completed",
+            "outcome": "completed",
+            "optional": "ignored"
+          }
+        }
+      ]
+    }
+  },
+  {
+    "name": "snapshot-explicit-v1",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [],
+      "v": 1
+    }
+  },
+  {
+    "name": "heartbeat-explicit-v1",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20,
+      "v": 1
+    }
+  },
+  {
+    "name": "heartbeat-ignores-snapshot-only-fields",
+    "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 21,
+      "sessions": "ignored",
+      "sourceLabel": false
+    }
+  }
+]
