@@ -220,7 +220,7 @@ test('host observes before enumeration, refreshes delayed approval and disposes 
         if (projectionMode === 'throwing') throw new Error('projection unavailable')
         return { stateOf: (session, key) => {
           assert.equal(key, 'title')
-          return { title: `${session.id} initial title` }
+          return `${session.id} initial title`
         } }
       },
       inject(services, callback) {
