@@ -10,6 +10,17 @@
       "kind": "turnStarted",
       "occurredAt": 1792756800,
       "toolId": null
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
     }
   },
   {
@@ -23,6 +34,17 @@
       "kind": "sessionEnded",
       "occurredAt": 1792756800,
       "toolId": null
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "claudeCode",
+      "sessionId": "hook-session",
+      "turnId": null,
+      "eventId": "event-a",
+      "kind": "sessionEnded",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
     }
   },
   {
@@ -37,6 +59,17 @@
       "occurredAt": 1792756800,
       "toolId": null,
       "v": 1
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
     }
   },
   {
@@ -51,6 +84,442 @@
       "occurredAt": 1792756800,
       "toolId": null,
       "optional": "ignored"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "turnStarted",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
+    }
+  },
+  {
+    "name": "activity-with-label",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "harness-native-pet"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "harness-native-pet"
+    }
+  },
+  {
+    "name": "activity-null-label",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
+    }
+  },
+  {
+    "name": "label-ascii-64",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  },
+  {
+    "name": "label-ascii-65",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  },
+  {
+    "name": "label-ascii-256",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+    }
+  },
+  {
+    "name": "label-cjk-64",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+    }
+  },
+  {
+    "name": "label-cjk-65",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+    }
+  },
+  {
+    "name": "label-cjk-256",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+    }
+  },
+  {
+    "name": "label-astral-64",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+    }
+  },
+  {
+    "name": "label-astral-65",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+    }
+  },
+  {
+    "name": "label-astral-256",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+    }
+  },
+  {
+    "name": "label-controls",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": " \u0000会\n话​‮标题﻿ "
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "会话标题"
+    }
+  },
+  {
+    "name": "label-empty",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": ""
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
+    }
+  },
+  {
+    "name": "label-empty-after-clean",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": " \t​ "
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": null
+    }
+  },
+  {
+    "name": "label-unicode-trim",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "   标题 　"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "标题"
+    }
+  },
+  {
+    "name": "label-combining-boundary",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé"
+    }
+  },
+  {
+    "name": "label-cjk-mixed-boundary",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中😀"
+    },
+    "normalized": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中😀"
     }
   }
 ]

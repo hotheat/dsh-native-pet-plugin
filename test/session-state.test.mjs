@@ -156,7 +156,7 @@ test('initialize never clobbers observed state and known turns survive idle stat
   assert.equal(observed.phase, 'waiting', 'mature approval takes precedence over tools')
   states.event('a', start(3, 2))
   assert.deepEqual(states.snapshot(400)[1], {
-    sessionId: 'a', turn: 2, phase: 'thinking', activeTools: 0, pendingApprovals: 0, result: null,
+    sessionId: 'a', title: null, turn: 2, phase: 'thinking', activeTools: 0, pendingApprovals: 0, result: null,
   })
 })
 
@@ -177,4 +177,39 @@ test('remove forgets projection and sequence history and tolerates missing sessi
   assert.deepEqual(states.snapshot(), [])
   states.event('a', start(0, 2))
   assert.equal(states.snapshot()[0].turn, 2)
+})
+
+test('initial and live titles enter snapshots without changing session enumeration', () => {
+  const states = new SessionStates()
+  states.initialize('a', 'running', ' 初始\u0000标题 ')
+  states.initialize('child')
+  assert.equal(states.snapshot()[0].title, '初始标题')
+  assert.equal(states.snapshot()[1].title, null)
+  states.event('a', event('session/title', 1, { title: '新标题' }))
+  states.initialize('a', 'idle', '旧标题')
+  states.event('a', event('session/title', 0, { title: '迟到标题' }))
+  assert.equal(states.snapshot()[0].title, '新标题')
+  states.event('a', start(2))
+  states.event('a', end(3))
+  assert.equal(states.snapshot()[0].title, '新标题')
+  states.event('a', event('session/title', 4, { title: '中😀'.repeat(200) }))
+  assert.equal([...states.snapshot()[0].title].length, 256)
+  for (const title of [null, '', ' \t\n\u007f\u0085\u200b ', 123]) {
+    states.event('child', event('session/title', states.sessions.get('child').lastSeq + 1, { title }))
+    assert.equal(states.snapshot()[1].title, null)
+  }
+})
+
+test('initial and live titles share scalar normalization at every boundary', () => {
+  const cases = [[' \u0000会\n话\u200b标题 ', '会话标题'], [' \t\u200b ', null],
+    ['e\u0301'.repeat(129), 'e\u0301'.repeat(128)]]
+  for (const char of ['a', '中', '😀']) {
+    for (const count of [64, 65, 256, 257, 1024]) cases.push([char.repeat(count), char.repeat(Math.min(count, 256))])
+  }
+  for (const [title, expected] of cases) {
+    const states = new SessionStates()
+    states.initialize('initial', 'idle', title)
+    states.event('live', event('session/title', 1, { title }))
+    assert.deepEqual(states.snapshot().map(item => item.title), [expected, expected])
+  }
 })

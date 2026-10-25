@@ -5,7 +5,7 @@ import { test } from 'node:test'
 import { decodeMessage, encodeMessage, MAX_LINE_BYTES, socketPath } from '../lib/protocol.js'
 
 const session = (overrides = {}) => ({
-  sessionId: 'session-a', turn: 1, phase: 'thinking', activeTools: 0, pendingApprovals: 0, result: null,
+  sessionId: 'session-a', title: null, turn: 1, phase: 'thinking', activeTools: 0, pendingApprovals: 0, result: null,
   ...overrides,
 })
 const snapshot = (overrides = {}) => ({
@@ -14,7 +14,7 @@ const snapshot = (overrides = {}) => ({
 const heartbeat = () => ({ type: 'heartbeat', sourceId: 'source-a', seq: 20 })
 const activity = () => ({
   type: 'activity', provider: 'codex', sessionId: 'hook-session', turnId: 'turn-a',
-  eventId: 'event-a', kind: 'turnStarted', occurredAt: 1792756800, toolId: null,
+  label: null, eventId: 'event-a', kind: 'turnStarted', occurredAt: 1792756800, toolId: null,
 })
 
 test('snapshot, heartbeat and upstream activity round-trip with exact wire fields', () => {
@@ -47,6 +47,21 @@ test('unknown fields are stripped at every depth, matching the upstream decoder'
   assert.deepEqual(decodeMessage({ ...activity(), optional: 'ignored' }), activity())
 })
 
+test('optional title and label round-trip, reject wrong types and retain unknown-field stripping', () => {
+  for (const title of [null, '会话标题', '😀'.repeat(256)]) {
+    const expected = snapshot({ sessions: [session({ title })] })
+    assert.deepEqual(decodeMessage({ ...expected, ignored: true }), expected)
+  }
+  for (const label of [null, 'harness-native-pet']) {
+    const expected = { ...activity(), label }
+    assert.deepEqual(decodeMessage({ ...expected, ignored: true }), expected)
+  }
+  for (const value of [false, 123, {}, []]) {
+    assert.throws(() => decodeMessage(snapshot({ sessions: [session({ title: value })] })), /session snapshot/)
+    assert.throws(() => decodeMessage({ ...activity(), label: value }), /activity/)
+  }
+})
+
 test('rejects duplicate sessionId inside one snapshot', () => {
   assert.throws(() => decodeMessage(snapshot({ sessions: [session(), session({ turn: 2 })] })), /session snapshot/)
   assert.doesNotThrow(() => decodeMessage(snapshot({ sessions: [session(), session({ sessionId: 'other' })] })))
@@ -54,14 +69,14 @@ test('rejects duplicate sessionId inside one snapshot', () => {
 
 test('rejects missing or wrongly typed required fields including nullable fields', () => {
   for (const make of [snapshot, heartbeat, activity]) {
-    for (const key of Object.keys(make())) {
+    for (const key of Object.keys(make()).filter(key => key !== 'label')) {
       const missing = make()
       delete missing[key]
       assert.throws(() => decodeMessage(missing), Error, `${make().type}: missing ${key}`)
       assert.throws(() => decodeMessage({ ...make(), [key]: false }), Error, `${make().type}: wrong ${key}`)
     }
   }
-  for (const key of Object.keys(session())) {
+  for (const key of Object.keys(session()).filter(key => key !== 'title')) {
     const missing = session()
     delete missing[key]
     assert.throws(() => decodeMessage(snapshot({ sessions: [missing] })), /session snapshot/)
@@ -139,4 +154,23 @@ test('socketPath honors explicit directory, runtime environment and home default
   process.env.DSH_NATIVE_PET_RUNTIME_DIR = '/tmp/dsh-pet-env'
   assert.equal(socketPath(), '/tmp/dsh-pet-env/pet.sock')
   assert.equal(socketPath('/tmp/dsh-pet-explicit'), '/tmp/dsh-pet-explicit/pet.sock')
+})
+
+test('title and label normalize missing, empty, controls and scalar boundaries', () => {
+  const cases = [[undefined, null], ['', null], [' \t\u200b ', null],
+    [' \0会\n话\u007f\u0085\u200b\u202e标题\ufeff ', '会话标题'],
+    ['\u00a0\u2000\u2028标题\u2029\u3000', '标题']]
+  for (const char of ['a', '中', '😀']) {
+    for (const count of [64, 65, 256, 257, 1024]) cases.push([char.repeat(count), char.repeat(Math.min(count, 256))])
+  }
+  cases.push(['e\u0301'.repeat(129), 'e\u0301'.repeat(128)])
+  cases.push(['中'.repeat(255) + '😀尾', '中'.repeat(255) + '😀'])
+  for (const [input, expected] of cases) {
+    const item = session()
+    const event = activity()
+    if (input === undefined) { delete item.title; delete event.label }
+    else { item.title = input; event.label = input }
+    assert.equal(decodeMessage(snapshot({ sessions: [item] })).sessions[0].title, expected)
+    assert.equal(decodeMessage(event).label, expected)
+  }
 })

@@ -9,8 +9,10 @@ const invalid = read('../fixtures/invalid-messages.json')
 
 for (const fixture of valid) {
   test(`contract accepts shared ${fixture.name}`, () => {
-    const encoded = encodeMessage(decodeMessage(fixture.message))
-    assert.deepEqual(decodeMessage(JSON.parse(encoded)), decodeMessage(fixture.message))
+    const decoded = decodeMessage(fixture.message)
+    assert.deepEqual(decoded, fixture.normalized)
+    const encoded = encodeMessage(decoded)
+    assert.deepEqual(decodeMessage(JSON.parse(encoded)), fixture.normalized)
     assert.equal(Object.hasOwn(JSON.parse(encoded), 'v'), false)
     assert.equal(encoded.includes('"optional"'), false)
     assert.equal(encoded.at(-1), '\n')
