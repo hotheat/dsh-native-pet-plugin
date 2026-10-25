@@ -7,6 +7,13 @@
       "sourceLabel": "DSH",
       "seq": 1,
       "sessions": []
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": []
     }
   },
   {
@@ -23,6 +30,23 @@
           "phase": "idle",
           "activeTools": 0,
           "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": null,
+          "phase": "idle",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "title": null,
           "result": null
         }
       ]
@@ -45,6 +69,23 @@
           "result": null
         }
       ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 3,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": null,
+          "phase": "running",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "title": null,
+          "result": null
+        }
+      ]
     }
   },
   {
@@ -61,6 +102,23 @@
           "phase": "thinking",
           "activeTools": 0,
           "pendingApprovals": 0,
+          "result": null
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 4,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "thinking",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "title": null,
           "result": null
         }
       ]
@@ -83,6 +141,23 @@
           "result": null
         }
       ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 5,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "title": null,
+          "result": null
+        }
+      ]
     }
   },
   {
@@ -102,6 +177,23 @@
           "result": null
         }
       ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 6,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": null,
+          "result": null
+        }
+      ]
     }
   },
   {
@@ -118,6 +210,26 @@
           "phase": "completed",
           "activeTools": 0,
           "pendingApprovals": 0,
+          "result": {
+            "id": "session-a:1:completed",
+            "outcome": "completed"
+          }
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 7,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "completed",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "title": null,
           "result": {
             "id": "session-a:1:completed",
             "outcome": "completed"
@@ -146,6 +258,26 @@
           }
         }
       ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 8,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "error",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "title": null,
+          "result": {
+            "id": "session-a:1:error",
+            "outcome": "error"
+          }
+        }
+      ]
     }
   },
   {
@@ -168,11 +300,36 @@
           }
         }
       ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 9,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "stopped",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "title": null,
+          "result": {
+            "id": "session-a:1:stopped",
+            "outcome": "aborted"
+          }
+        }
+      ]
     }
   },
   {
     "name": "heartbeat",
     "message": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20
+    },
+    "normalized": {
       "type": "heartbeat",
       "sourceId": "source-a",
       "seq": 20
@@ -196,6 +353,23 @@
         }
       ],
       "secret": "not-accepted"
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "title": null,
+          "result": null
+        }
+      ]
     }
   },
   {
@@ -214,6 +388,23 @@
           "pendingApprovals": 0,
           "result": null,
           "prompt": "private"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 2,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "working",
+          "activeTools": 1,
+          "pendingApprovals": 0,
+          "title": null,
+          "result": null
         }
       ]
     }
@@ -239,6 +430,26 @@
           }
         }
       ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 7,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "completed",
+          "activeTools": 0,
+          "pendingApprovals": 0,
+          "title": null,
+          "result": {
+            "id": "session-a:1:completed",
+            "outcome": "completed"
+          }
+        }
+      ]
     }
   },
   {
@@ -250,6 +461,13 @@
       "seq": 1,
       "sessions": [],
       "v": 1
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": []
     }
   },
   {
@@ -259,6 +477,11 @@
       "sourceId": "source-a",
       "seq": 20,
       "v": 1
+    },
+    "normalized": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 20
     }
   },
   {
@@ -269,6 +492,640 @@
       "seq": 21,
       "sessions": "ignored",
       "sourceLabel": false
+    },
+    "normalized": {
+      "type": "heartbeat",
+      "sourceId": "source-a",
+      "seq": 21
+    }
+  },
+  {
+    "name": "snapshot-with-title",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "整理会话标题"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "整理会话标题",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "snapshot-null-title",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": null
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": null,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-ascii-64",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-ascii-65",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-ascii-256",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-cjk-64",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-cjk-65",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-cjk-256",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-astral-64",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-astral-65",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-astral-256",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀😀",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-controls",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": " \u0000会\n话​‮标题﻿ "
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "会话标题",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-empty",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": ""
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": null,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-empty-after-clean",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": " \t​ "
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": null,
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-unicode-trim",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "   标题 　"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "标题",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-combining-boundary",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "éééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééééé",
+          "result": null
+        }
+      ]
+    }
+  },
+  {
+    "name": "title-cjk-mixed-boundary",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中😀"
+        }
+      ]
+    },
+    "normalized": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "title": "中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中中😀",
+          "result": null
+        }
+      ]
     }
   }
 ]

@@ -212,7 +212,17 @@ test('host observes before enumeration, refreshes delayed approval and disposes 
     if (!host) return
     process.env.DSH_NATIVE_PET_RUNTIME_DIR = directory
     const listeners = new Map()
+    let projectionMode = 'available'
     const ctx = {
+      get(name) {
+        assert.equal(name, 'sessionProjections')
+        if (projectionMode === 'missing') return undefined
+        if (projectionMode === 'throwing') throw new Error('projection unavailable')
+        return { stateOf: (session, key) => {
+          assert.equal(key, 'title')
+          return { title: `${session.id} initial title` }
+        } }
+      },
       inject(services, callback) {
         assert.deepEqual(services, ['sessions', 'agents'])
         callback(ctx)
@@ -223,6 +233,7 @@ test('host observes before enumeration, refreshes delayed approval and disposes 
         list() {
           assert.deepEqual([...listeners.keys()], ['session/created', 'session/disposed', 'session/event', 'agent/status'])
           listeners.get('session/event')({ id: 'a' }, { type: 'turn/start', seq: 0, data: { turn: 1 } })
+          listeners.get('session/event')({ id: 'a' }, { type: 'session/title', seq: 1, data: { title: 'live title' } })
           return [{ id: 'a' }, { id: 'baseline' }]
         },
       },
@@ -232,17 +243,26 @@ test('host observes before enumeration, refreshes delayed approval and disposes 
     apply(ctx)
     await until(() => host.messages.some(m => m.type === 'snapshot'), 'host baseline')
     assert.equal(host.messages[0].sessions[0].phase, 'thinking', 'enumeration preserves observed turn')
+    assert.equal(host.messages[0].sessions[0].title, 'live title', 'enumeration preserves observed title')
+    assert.equal(host.messages[0].sessions[1].title, 'baseline initial title')
     assert.equal(host.messages[0].sessions[1].phase, 'idle')
     assert.equal(host.messages[0].sessions[1].result, null, 'baseline does not replay historical results')
     listeners.get('session/created')({ id: 'new' })
     listeners.get('agent/status')({ agent: { id: 'new' }, status: 'running' })
     listeners.get('session/disposed')({ id: 'baseline' })
-    listeners.get('session/event')({ id: 'a' }, { type: 'approval/asked', seq: 1, data: { id: 'ask' } })
+    listeners.get('session/event')({ id: 'a' }, { type: 'approval/asked', seq: 2, data: { id: 'ask' } })
     await until(() => host.messages.some(m => m.type === 'snapshot' && m.sessions[0]?.pendingApprovals === 1), 'approval observed')
     const immediate = host.messages.find(m => m.type === 'snapshot' && m.sessions[0]?.pendingApprovals === 1)
     assert.equal(immediate.sessions[0].phase, 'thinking')
     assert.deepEqual(immediate.sessions.map(s => [s.sessionId, s.phase]), [['a', 'thinking'], ['new', 'running']])
+    assert.equal(immediate.sessions[1].title, 'new initial title')
     await until(() => host.messages.some(m => m.type === 'snapshot' && m.sessions[0]?.phase === 'waiting'), 'approval timer refresh')
+    projectionMode = 'missing'
+    listeners.get('session/created')({ id: 'no-service' })
+    projectionMode = 'throwing'
+    listeners.get('session/created')({ id: 'failed-projection' })
+    await until(() => host.messages.some(m => m.sessions?.length === 4), 'optional projection unavailable')
+    assert.deepEqual(host.messages.at(-1).sessions.slice(2).map(s => s.title), [null, null])
     dispose()
     await until(() => host.sockets.size === 0, 'host disposal')
     const count = host.messages.length

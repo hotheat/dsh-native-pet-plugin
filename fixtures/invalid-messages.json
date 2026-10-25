@@ -690,5 +690,39 @@
       "occurredAt": 1792756800,
       "toolId": false
     }
+  },
+  {
+    "name": "snapshot-title-wrong-type",
+    "message": {
+      "type": "snapshot",
+      "sourceId": "source-a",
+      "sourceLabel": "DSH",
+      "seq": 1,
+      "sessions": [
+        {
+          "sessionId": "session-a",
+          "turn": 1,
+          "phase": "waiting",
+          "activeTools": 0,
+          "pendingApprovals": 1,
+          "result": null,
+          "title": 123
+        }
+      ]
+    }
+  },
+  {
+    "name": "activity-label-wrong-type",
+    "message": {
+      "type": "activity",
+      "provider": "codex",
+      "sessionId": "hook-session",
+      "turnId": "turn-a",
+      "eventId": "event-a",
+      "kind": "waiting",
+      "occurredAt": 1792756800,
+      "toolId": null,
+      "label": 123
+    }
   }
 ]
